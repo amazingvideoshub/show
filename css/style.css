@@ -8413,9 +8413,9 @@ body.av-age-locked {
 
 
 @media(max-width: 767px){
-    .col-xs-12 {
+/*    .col-xs-12 {
     width: 50%;
-}
+}*/
 
 .col-lg-5.col-md-6.col-sm-8.col-xs-12.header-search-wrap.pull-right {
     width: 100%;
