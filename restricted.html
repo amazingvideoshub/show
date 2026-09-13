@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <title>Access Restricted - Amazing Video</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    >
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+
+            width: 100%;
+            min-height: 100%;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #f5f8fb;
+        }
+
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .restricted-header {
+            width: 100%;
+
+            background: #ffffff;
+
+            border-bottom:
+                1px solid #e8edf2;
+        }
+
+
+        .restricted-header-inner {
+            width: 100%;
+            max-width: 1180px;
+
+            margin: 0 auto;
+
+            min-height: 74px;
+
+            padding:
+                14px 22px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .restricted-logo img {
+            display: block;
+
+            max-width: 185px;
+
+            height: auto;
+        }
+
+
+        .restricted-header-badge {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            padding:
+                7px 12px;
+
+            border:
+                1px solid #ffd8dc;
+
+            border-radius: 50px;
+
+            background: #fff6f7;
+
+            color: #df3f4e;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        .restricted-header-badge i {
+            font-size: 13px;
+        }
+
+
+
+        /* =====================================================
+           MAIN
+        ===================================================== */
+
+        .restricted-main {
+            flex: 1;
+
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding:
+                50px 20px;
+        }
+
+
+        .restricted-card {
+            width: 100%;
+            max-width: 610px;
+
+            padding:
+                48px 42px 40px;
+
+            background: #ffffff;
+
+            border:
+                1px solid #e6ebf0;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            box-shadow:
+                0 22px 70px
+                rgba(31, 49, 67, 0.10);
+        }
+
+
+
+        /* =====================================================
+           18+ ICON
+        ===================================================== */
+
+        .restricted-icon-wrap {
+            position: relative;
+
+            width: 104px;
+            height: 104px;
+
+            margin:
+                0 auto 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .restricted-icon-ring {
+            position: absolute;
+
+            inset: 0;
+
+            border:
+                1px solid #ffd7da;
+
+            border-radius: 50%;
+
+            background: #fff7f8;
+        }
+
+
+        .restricted-icon {
+            position: relative;
+
+            z-index: 2;
+
+            width: 78px;
+            height: 78px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border:
+                2px solid #ef4b58;
+
+            border-radius: 50%;
+
+            color: #ef4b58;
+
+            background: #ffffff;
+
+            font-size: 26px;
+
+            font-weight: 700;
+        }
+
+
+
+        /* =====================================================
+           TEXT
+        ===================================================== */
+
+        .restricted-label {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            margin-bottom: 12px;
+
+            color: #ef4b58;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.8px;
+        }
+
+
+        .restricted-title {
+            margin:
+                0 0 14px;
+
+            color: #182330;
+
+            font-size: 31px;
+
+            line-height: 1.25;
+
+            font-weight: 700;
+        }
+
+
+        .restricted-description {
+            max-width: 470px;
+
+            margin:
+                0 auto;
+
+            color: #66717e;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+
+        /* =====================================================
+           INFO BOX
+        ===================================================== */
+
+        .restricted-info {
+            margin:
+                28px 0 26px;
+
+            padding:
+                17px 18px;
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 12px;
+
+            background: #f8fafc;
+
+            border:
+                1px solid #e8edf2;
+
+            border-radius: 11px;
+
+            text-align: left;
+        }
+
+
+        .restricted-info-icon {
+            min-width: 34px;
+            height: 34px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #edf7fc;
+
+            color: #25a8e0;
+
+            font-size: 14px;
+        }
+
+
+        .restricted-info-content strong {
+            display: block;
+
+            margin-bottom: 4px;
+
+            color: #28323b;
+
+            font-size: 13px;
+        }
+
+
+        .restricted-info-content p {
+            margin: 0;
+
+            color: #7b8690;
+
+            font-size: 12px;
+
+            line-height: 1.65;
+        }
+
+
+
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
+
+        .restricted-actions {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .restricted-btn {
+            min-height: 46px;
+
+            padding:
+                0 22px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            border-radius: 8px;
+
+            text-decoration: none !important;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition:
+                all .2s ease;
+        }
+
+
+        .restricted-btn-leave {
+            border:
+                1px solid #1d2935;
+
+            background: #1d2935;
+
+            color: #ffffff !important;
+        }
+
+
+        .restricted-btn-leave:hover {
+            background: #101820;
+
+            border-color: #101820;
+
+            transform:
+                translateY(-1px);
+        }
+
+
+        .restricted-btn-policy {
+            border:
+                1px solid #dde4ea;
+
+            background: #ffffff;
+
+            color: #53606c !important;
+        }
+
+
+        .restricted-btn-policy:hover {
+            background: #f7f9fb;
+
+            color: #25a8e0 !important;
+        }
+
+
+
+        /* =====================================================
+           FOOT NOTE
+        ===================================================== */
+
+        .restricted-note {
+            margin:
+                23px 0 0;
+
+            color: #a0a8b0;
+
+            font-size: 11px;
+
+            line-height: 1.6;
+        }
+
+
+        .restricted-note a {
+            color: #25a8e0;
+
+            text-decoration: none;
+        }
+
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .restricted-footer {
+            width: 100%;
+
+            padding:
+                18px 20px;
+
+            background: #ffffff;
+
+            border-top:
+                1px solid #e7ecf1;
+
+            text-align: center;
+        }
+
+
+        .restricted-footer p {
+            margin: 0;
+
+            color: #9099a2;
+
+            font-size: 11px;
+        }
+
+
+        .restricted-footer a {
+            color: #25a8e0;
+
+            text-decoration: none;
+        }
+
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 767px) {
+
+            .restricted-header-inner {
+                min-height: 65px;
+
+                padding:
+                    12px 16px;
+            }
+
+
+            .restricted-logo img {
+                max-width: 155px;
+            }
+
+
+            .restricted-header-badge {
+                padding:
+                    6px 9px;
+
+                font-size: 10px;
+            }
+
+
+            .restricted-main {
+                padding:
+                    30px 15px;
+            }
+
+
+            .restricted-card {
+                padding:
+                    35px 20px 30px;
+
+                border-radius: 14px;
+            }
+
+
+            .restricted-icon-wrap {
+                width: 90px;
+                height: 90px;
+            }
+
+
+            .restricted-icon {
+                width: 68px;
+                height: 68px;
+
+                font-size: 23px;
+            }
+
+
+            .restricted-title {
+                font-size: 25px;
+            }
+
+
+            .restricted-description {
+                font-size: 13px;
+            }
+
+
+            .restricted-info {
+                padding:
+                    14px;
+            }
+
+
+            .restricted-actions {
+                flex-direction: column;
+            }
+
+
+            .restricted-btn {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="restricted-header">
+
+    <div class="restricted-header-inner">
+
+        <a
+            href="#"
+            class="restricted-logo"
+            aria-label="Amazing Video"
+        >
+            <img
+                src="amazinglogo.png"
+                alt="Amazing Video"
+            >
+        </a>
+
+
+        <div class="restricted-header-badge">
+
+            <i class="fa fa-lock"></i>
+
+            18+ Restricted
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="restricted-main">
+
+    <div class="restricted-card">
+
+
+        <!-- 18+ -->
+        <div class="restricted-icon-wrap">
+
+            <div class="restricted-icon-ring"></div>
+
+            <div class="restricted-icon">
+                18+
+            </div>
+
+        </div>
+
+
+
+        <div class="restricted-label">
+
+            <i class="fa fa-lock"></i>
+
+            Age Restricted Area
+
+        </div>
+
+
+
+        <h1 class="restricted-title">
+            Access Restricted
+        </h1>
+
+
+
+        <p class="restricted-description">
+
+            Amazing Video is intended exclusively for
+            adults aged 18 years or older.
+
+            Access to this website is not permitted if
+            you are under the required legal age.
+
+        </p>
+
+
+
+        <!-- Information -->
+        <div class="restricted-info">
+
+            <div class="restricted-info-icon">
+
+                <i class="fa fa-shield"></i>
+
+            </div>
+
+
+            <div class="restricted-info-content">
+
+                <strong>
+                    Age Verification Required
+                </strong>
+
+
+                <p>
+
+                    This website contains age-restricted
+                    content. Users are responsible for
+                    complying with the laws and age
+                    requirements applicable in their
+                    country or region.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Actions -->
+        <div class="restricted-actions">
+
+            <a
+                href="https://www.google.com"
+                class="restricted-btn restricted-btn-leave"
+            >
+
+                <i class="fa fa-sign-out"></i>
+
+                Leave Website
+
+            </a>
+
+
+            <a
+                href="age-policy.html"
+                class="restricted-btn restricted-btn-policy"
+            >
+
+                <i class="fa fa-info-circle"></i>
+
+                Age Policy
+
+            </a>
+
+        </div>
+
+
+
+        <p class="restricted-note">
+
+            If you reached this page after selecting that
+            you are under 18, your access will remain
+            restricted on this device.
+
+            <br>
+
+            Read our
+
+            <a href="terms.html">
+                Terms
+            </a>
+
+            and
+
+            <a href="privacy.html">
+                Privacy Policy
+            </a>.
+
+        </p>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="restricted-footer">
+
+    <p>
+
+        © 2026
+
+        <a href="#">
+            Amazing Video
+        </a>
+
+        · Adults 18+ Only · All rights reserved.
+
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     RESTRICTED STATE CHECK
+===================================================== -->
+
+<script>
+
+(function () {
+
+    'use strict';
+
+
+    /*
+     * Same key jo age popup me use ki thi.
+     */
+
+    var STORAGE_KEY =
+        'amazing_video_age_status';
+
+
+    /*
+     * Ensure restricted state remains saved.
+     *
+     * Agar user directly restricted.html open kare,
+     * tab bhi restricted save ho jayega.
+     */
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        'restricted'
+    );
+
+
+    /*
+     * Browser back se protected page par
+     * accidentally wapas na ja sake.
+     */
+
+    window.addEventListener(
+        'pageshow',
+        function () {
+
+            localStorage.setItem(
+                STORAGE_KEY,
+                'restricted'
+            );
+
+        }
+    );
+
+
+})();
+
+</script>
+
+
+</body>
+</html>

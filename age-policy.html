@@ -1,0 +1,2117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta
+        name="robots"
+        content="noarchive"
+    >
+
+    <meta
+        name="referrer"
+        content="strict-origin-when-cross-origin"
+    >
+
+    <title>Age Policy | 18+ Access</title>
+
+    <style>
+
+        /* ============================================================
+           RESET
+           ============================================================ */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+
+            min-height: 100vh;
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 15% 10%,
+                    rgba(220, 38, 38, 0.15),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 85% 80%,
+                    rgba(99, 102, 241, 0.10),
+                    transparent 26%
+                ),
+                #08090d;
+
+            color: #f8fafc;
+
+            line-height: 1.6;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+        button {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+
+        /* ============================================================
+           VARIABLES
+           ============================================================ */
+
+        :root {
+
+            --bg: #08090d;
+            --card: #111318;
+            --card-soft: #151820;
+
+            --text: #f8fafc;
+            --muted: #9ca3af;
+
+            --line: rgba(255, 255, 255, 0.08);
+
+            --danger: #ef4444;
+            --danger-dark: #dc2626;
+            --danger-soft: rgba(239, 68, 68, 0.10);
+
+            --success: #22c55e;
+            --success-soft: rgba(34, 197, 94, 0.10);
+
+            --warning: #f59e0b;
+            --warning-soft: rgba(245, 158, 11, 0.10);
+
+            --white: #ffffff;
+        }
+
+
+        /* ============================================================
+           PAGE
+           ============================================================ */
+
+        .page {
+            width: 100%;
+
+            max-width: 1180px;
+
+            margin: 0 auto;
+
+            padding:
+                max(24px, env(safe-area-inset-top))
+                20px
+                max(35px, env(safe-area-inset-bottom));
+        }
+
+
+        /* ============================================================
+           TOP BAR
+           ============================================================ */
+
+        .topbar {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-bottom: 35px;
+        }
+
+        .brand {
+            display: flex;
+
+            align-items: center;
+
+            gap: 11px;
+
+            color: #ffffff;
+
+            font-size: 15px;
+            font-weight: 800;
+
+            letter-spacing: 0.2px;
+        }
+
+        .brand-icon {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 38px;
+            height: 38px;
+
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            border-radius: 12px;
+
+            background: var(--danger-soft);
+
+            color: #f87171;
+
+            font-size: 17px;
+        }
+
+        .age-badge {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            padding: 8px 12px;
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+
+            background: rgba(255, 255, 255, 0.04);
+
+            color: #d1d5db;
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .age-badge-dot {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--warning);
+
+            box-shadow:
+                0 0 0 4px rgba(245, 158, 11, 0.08);
+        }
+
+        .age-badge.is-approved {
+            border-color: rgba(34, 197, 94, 0.20);
+
+            background: var(--success-soft);
+
+            color: #86efac;
+        }
+
+        .age-badge.is-approved .age-badge-dot {
+            background: var(--success);
+
+            box-shadow:
+                0 0 0 4px rgba(34, 197, 94, 0.08);
+        }
+
+        .age-badge.is-blocked {
+            border-color: rgba(239, 68, 68, 0.20);
+
+            background: var(--danger-soft);
+
+            color: #fca5a5;
+        }
+
+        .age-badge.is-blocked .age-badge-dot {
+            background: var(--danger);
+
+            box-shadow:
+                0 0 0 4px rgba(239, 68, 68, 0.08);
+        }
+
+
+        /* ============================================================
+           HERO GRID
+           ============================================================ */
+
+        .hero-grid {
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.05fr)
+                minmax(380px, 0.95fr);
+
+            gap: 24px;
+
+            align-items: start;
+        }
+
+
+        /* ============================================================
+           POLICY
+           ============================================================ */
+
+        .policy-card {
+            overflow: hidden;
+
+            border: 1px solid var(--line);
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.035),
+                    rgba(255, 255, 255, 0.01)
+                );
+
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.25);
+        }
+
+        .policy-hero {
+            padding: 35px 35px 28px;
+
+            border-bottom: 1px solid var(--line);
+        }
+
+        .adult-mark {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-bottom: 20px;
+
+            padding: 8px 12px;
+
+            border: 1px solid rgba(239, 68, 68, 0.18);
+            border-radius: 999px;
+
+            background: rgba(239, 68, 68, 0.08);
+
+            color: #fca5a5;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 0.5px;
+
+            text-transform: uppercase;
+        }
+
+        .adult-circle {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 26px;
+            height: 26px;
+
+            border: 2px solid #ef4444;
+            border-radius: 50%;
+
+            color: #ffffff;
+
+            font-size: 11px;
+            font-weight: 900;
+        }
+
+        .policy-title {
+            max-width: 720px;
+
+            margin: 0 0 13px;
+
+            color: #ffffff;
+
+            font-size: clamp(29px, 4vw, 48px);
+            font-weight: 850;
+
+            line-height: 1.08;
+
+            letter-spacing: -1.5px;
+        }
+
+        .policy-description {
+            max-width: 720px;
+
+            margin: 0;
+
+            color: #aeb4bf;
+
+            font-size: 15px;
+        }
+
+
+        /* ============================================================
+           POLICY CONTENT
+           ============================================================ */
+
+        .policy-content {
+            padding: 30px 35px 35px;
+        }
+
+        .notice {
+            display: flex;
+
+            gap: 13px;
+
+            margin-bottom: 28px;
+
+            padding: 16px;
+
+            border: 1px solid rgba(245, 158, 11, 0.18);
+            border-radius: 16px;
+
+            background: var(--warning-soft);
+        }
+
+        .notice-icon {
+            flex-shrink: 0;
+
+            color: #fbbf24;
+
+            font-size: 19px;
+        }
+
+        .notice-text {
+            color: #d6d3d1;
+
+            font-size: 13px;
+        }
+
+        .notice-text strong {
+            color: #fde68a;
+        }
+
+        .rules {
+            display: grid;
+
+            gap: 13px;
+        }
+
+        .rule {
+            display: flex;
+
+            gap: 12px;
+
+            padding: 15px 16px;
+
+            border: 1px solid var(--line);
+            border-radius: 16px;
+
+            background: rgba(255, 255, 255, 0.022);
+        }
+
+        .rule-icon {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 28px;
+            height: 28px;
+
+            flex-shrink: 0;
+
+            border-radius: 9px;
+
+            background: rgba(34, 197, 94, 0.08);
+
+            color: #4ade80;
+
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        .rule-title {
+            margin-bottom: 2px;
+
+            color: #f3f4f6;
+
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .rule-description {
+            color: #8f96a3;
+
+            font-size: 12px;
+
+            line-height: 1.55;
+        }
+
+
+        /* ============================================================
+           AGE CHECK CARD
+           ============================================================ */
+
+        .verify-card {
+            position: sticky;
+
+            top: 22px;
+
+            overflow: hidden;
+
+            border: 1px solid var(--line);
+            border-radius: 28px;
+
+            background: #111318;
+
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.35);
+        }
+
+        .verify-top {
+            padding: 28px 28px 22px;
+
+            border-bottom: 1px solid var(--line);
+
+            text-align: center;
+        }
+
+        .verify-lock {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 58px;
+            height: 58px;
+
+            margin: 0 auto 15px;
+
+            border: 1px solid rgba(239, 68, 68, 0.20);
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(239, 68, 68, 0.15),
+                    rgba(239, 68, 68, 0.04)
+                );
+
+            color: #f87171;
+
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+        .verify-title {
+            margin: 0 0 6px;
+
+            color: #ffffff;
+
+            font-size: 21px;
+            font-weight: 850;
+        }
+
+        .verify-subtitle {
+            margin: 0;
+
+            color: #8f96a3;
+
+            font-size: 12px;
+        }
+
+        .verify-body {
+            padding: 25px 28px 28px;
+        }
+
+        .field-label {
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #d1d5db;
+
+            font-size: 12px;
+            font-weight: 750;
+        }
+
+        .date-input {
+            width: 100%;
+            min-height: 51px;
+
+            padding: 0 15px;
+
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: 14px;
+
+            outline: none;
+
+            background: #0b0d11;
+
+            color: #ffffff;
+
+            color-scheme: dark;
+
+            font-size: 14px;
+
+            transition: 0.2s ease;
+        }
+
+        .date-input:focus {
+            border-color: rgba(239, 68, 68, 0.55);
+
+            box-shadow:
+                0 0 0 4px rgba(239, 68, 68, 0.08);
+        }
+
+        .field-help {
+            margin-top: 7px;
+
+            color: #6b7280;
+
+            font-size: 11px;
+        }
+
+
+        /* ============================================================
+           CONSENT
+           ============================================================ */
+
+        .consent {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 10px;
+
+            margin: 19px 0;
+        }
+
+        .consent input {
+            width: 17px;
+            height: 17px;
+
+            margin: 2px 0 0;
+
+            flex-shrink: 0;
+
+            accent-color: #dc2626;
+        }
+
+        .consent label {
+            color: #9ca3af;
+
+            font-size: 11px;
+
+            line-height: 1.55;
+
+            cursor: pointer;
+        }
+
+        .consent strong {
+            color: #e5e7eb;
+        }
+
+
+        /* ============================================================
+           ERROR
+           ============================================================ */
+
+        .form-message {
+            display: none;
+
+            margin-bottom: 15px;
+
+            padding: 11px 13px;
+
+            border-radius: 12px;
+
+            font-size: 11px;
+            font-weight: 650;
+
+            line-height: 1.45;
+        }
+
+        .form-message.show {
+            display: block;
+        }
+
+        .form-message.error {
+            border: 1px solid rgba(239, 68, 68, 0.20);
+
+            background: var(--danger-soft);
+
+            color: #fca5a5;
+        }
+
+        .form-message.success {
+            border: 1px solid rgba(34, 197, 94, 0.20);
+
+            background: var(--success-soft);
+
+            color: #86efac;
+        }
+
+
+        /* ============================================================
+           BUTTONS
+           ============================================================ */
+
+        .continue-btn {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            width: 100%;
+            min-height: 50px;
+
+            padding: 10px 18px;
+
+            border: 0;
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ef4444,
+                    #dc2626
+                );
+
+            color: #ffffff;
+
+            font-size: 13px;
+            font-weight: 850;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 12px 30px rgba(220, 38, 38, 0.22);
+
+            transition:
+                transform 0.2s ease,
+                opacity 0.2s ease;
+        }
+
+        .continue-btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .continue-btn:active {
+            transform: translateY(0);
+        }
+
+        .continue-btn:disabled {
+            cursor: not-allowed;
+
+            opacity: 0.65;
+
+            transform: none;
+        }
+
+        .exit-btn {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            min-height: 46px;
+
+            margin-top: 10px;
+
+            padding: 10px 16px;
+
+            border: 1px solid var(--line);
+            border-radius: 14px;
+
+            background: transparent;
+
+            color: #9ca3af;
+
+            font-size: 12px;
+            font-weight: 750;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+        }
+
+        .exit-btn:hover {
+            background: rgba(255, 255, 255, 0.035);
+
+            color: #ffffff;
+        }
+
+        .privacy-note {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 7px;
+
+            margin-top: 17px;
+
+            color: #6b7280;
+
+            font-size: 10px;
+
+            line-height: 1.5;
+        }
+
+
+        /* ============================================================
+           ADDITIONAL POLICY
+           ============================================================ */
+
+        .extra-policy {
+            margin-top: 24px;
+
+            padding: 28px 30px;
+
+            border: 1px solid var(--line);
+            border-radius: 24px;
+
+            background: rgba(255, 255, 255, 0.018);
+        }
+
+        .extra-title {
+            margin: 0 0 15px;
+
+            color: #ffffff;
+
+            font-size: 17px;
+            font-weight: 800;
+        }
+
+        .extra-policy p {
+            margin: 0 0 12px;
+
+            color: #8f96a3;
+
+            font-size: 12px;
+        }
+
+        .extra-policy p:last-child {
+            margin-bottom: 0;
+        }
+
+        .policy-highlight {
+            color: #d1d5db;
+
+            font-weight: 700;
+        }
+
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+
+        .footer {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-top: 25px;
+
+            padding: 18px 2px 0;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+            color: #575e6a;
+
+            font-size: 10px;
+        }
+
+        .footer-links {
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .footer a {
+            color: #787f8b;
+
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #ffffff;
+        }
+
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+
+        @media (max-width: 900px) {
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .verify-card {
+                position: static;
+
+                order: -1;
+            }
+
+        }
+
+
+        @media (max-width: 575px) {
+
+            .page {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            .topbar {
+                margin-bottom: 22px;
+            }
+
+            .brand {
+                font-size: 13px;
+            }
+
+            .age-badge {
+                padding: 7px 9px;
+
+                font-size: 10px;
+            }
+
+            .policy-card,
+            .verify-card {
+                border-radius: 20px;
+            }
+
+            .policy-hero {
+                padding: 25px 20px 22px;
+            }
+
+            .policy-content {
+                padding: 22px 20px 25px;
+            }
+
+            .policy-title {
+                font-size: 30px;
+
+                letter-spacing: -0.8px;
+            }
+
+            .policy-description {
+                font-size: 13px;
+            }
+
+            .verify-top {
+                padding: 23px 20px 18px;
+            }
+
+            .verify-body {
+                padding: 21px 20px 23px;
+            }
+
+            .extra-policy {
+                padding: 22px 20px;
+
+                border-radius: 20px;
+            }
+
+            .footer {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <main class="page">
+
+
+        <!-- ==========================================================
+             TOP
+             ========================================================== -->
+
+        <header class="topbar">
+
+            <div class="brand">
+
+                <span class="brand-icon">
+                    18
+                </span>
+
+                <span>
+                    Adult Access Policy
+                </span>
+
+            </div>
+
+
+            <div
+                class="age-badge"
+                id="accessStatus"
+            >
+
+                <span class="age-badge-dot"></span>
+
+                <span id="accessStatusText">
+                    Age not confirmed
+                </span>
+
+            </div>
+
+        </header>
+
+
+
+        <section class="hero-grid">
+
+
+            <!-- ======================================================
+                 LEFT POLICY
+                 ====================================================== -->
+
+            <article class="policy-card">
+
+
+                <div class="policy-hero">
+
+
+                    <div class="adult-mark">
+
+                        <span class="adult-circle">
+                            18+
+                        </span>
+
+                        Adults Only
+
+                    </div>
+
+
+                    <h1 class="policy-title">
+                        Age & Adult Content Policy
+                    </h1>
+
+
+                    <p class="policy-description">
+
+                        This website is intended strictly for adults who
+                        are legally permitted to access adult-oriented
+                        content in their jurisdiction.
+
+                    </p>
+
+
+                </div>
+
+
+                <div class="policy-content">
+
+
+                    <div class="notice">
+
+
+                        <div class="notice-icon">
+                            !
+                        </div>
+
+
+                        <div class="notice-text">
+
+                            <strong>
+                                Important:
+                            </strong>
+
+                            Some areas of this website may contain nudity,
+                            sexually explicit material or other content
+                            intended solely for adults. Minors must not
+                            access those areas.
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="rules">
+
+
+                        <!-- Rule -->
+
+                        <div class="rule">
+
+                            <div class="rule-icon">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <div class="rule-title">
+                                    Adults only
+                                </div>
+
+                                <div class="rule-description">
+
+                                    You must be at least 18 years old and
+                                    meet any higher minimum age required
+                                    by the laws applicable where you live
+                                    or access this service.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Rule -->
+
+                        <div class="rule">
+
+                            <div class="rule-icon">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <div class="rule-title">
+                                    No minors
+                                </div>
+
+                                <div class="rule-description">
+
+                                    Content depicting, involving, sexualizing
+                                    or appearing to depict anyone under 18
+                                    is strictly prohibited.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Rule -->
+
+                        <div class="rule">
+
+                            <div class="rule-icon">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <div class="rule-title">
+                                    Consent is mandatory
+                                </div>
+
+                                <div class="rule-description">
+
+                                    Adult content must involve consenting
+                                    adults. Non-consensual intimate imagery,
+                                    hidden-camera material, coercion,
+                                    exploitation or trafficking-related
+                                    content is prohibited.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Rule -->
+
+                        <div class="rule">
+
+                            <div class="rule-icon">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <div class="rule-title">
+                                    Age uncertainty means no publication
+                                </div>
+
+                                <div class="rule-description">
+
+                                    If a person's age cannot be reliably
+                                    established as an adult, that content
+                                    must not be uploaded, published or made
+                                    available.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Rule -->
+
+                        <div class="rule">
+
+                            <div class="rule-icon">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <div class="rule-title">
+                                    Reporting and removal
+                                </div>
+
+                                <div class="rule-description">
+
+                                    Users should have a clear way to report
+                                    suspected underage, non-consensual,
+                                    illegal or abusive material for prompt
+                                    review and removal.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Rule -->
+
+                        <div class="rule">
+
+                            <div class="rule-icon">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <div class="rule-title">
+                                    Local laws still apply
+                                </div>
+
+                                <div class="rule-description">
+
+                                    Access is prohibited wherever adult
+                                    material or this type of service is
+                                    unlawful. Users are responsible for
+                                    complying with laws applicable to them.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- ======================================================
+                 RIGHT AGE CHECK
+                 ====================================================== -->
+
+            <aside class="verify-card">
+
+
+                <div class="verify-top">
+
+
+                    <div class="verify-lock">
+                        18+
+                    </div>
+
+
+                    <h2 class="verify-title">
+                        Confirm Your Age
+                    </h2>
+
+
+                    <p class="verify-subtitle">
+
+                        Enter your date of birth before continuing.
+
+                    </p>
+
+
+                </div>
+
+
+                <div class="verify-body">
+
+
+                    <form
+                        id="ageForm"
+                        novalidate
+                    >
+
+
+                        <label
+                            for="dateOfBirth"
+                            class="field-label"
+                        >
+                            Date of Birth
+                        </label>
+
+
+                        <input
+                            type="date"
+                            id="dateOfBirth"
+                            class="date-input"
+                            autocomplete="bday"
+                            required
+                        >
+
+
+                        <div class="field-help">
+
+                            Your date of birth is checked locally in your
+                            browser and is not stored by this page.
+
+                        </div>
+
+
+                        <div class="consent">
+
+
+                            <input
+                                type="checkbox"
+                                id="adultConsent"
+                            >
+
+
+                            <label for="adultConsent">
+
+                                I confirm that I am legally permitted to
+                                access adult content and agree to the
+                                <strong>Age & Adult Content Policy</strong>.
+
+                            </label>
+
+
+                        </div>
+
+
+                        <div
+                            id="formMessage"
+                            class="form-message"
+                            role="alert"
+                            aria-live="polite"
+                        ></div>
+
+
+                        <button
+                            type="submit"
+                            class="continue-btn"
+                            id="continueButton"
+                        >
+
+                            Continue to 18+ Area
+
+                            <span>
+                                →
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="exit-btn"
+                            id="exitButton"
+                        >
+                            I am under 18 / Exit
+                        </button>
+
+
+                        <div class="privacy-note">
+
+                            <span>
+                                ●
+                            </span>
+
+                            <span>
+
+                                This browser check stores only an access
+                                decision and expiry time. It does not store
+                                the date of birth entered above.
+
+                            </span>
+
+                        </div>
+
+
+                    </form>
+
+
+                </div>
+
+
+            </aside>
+
+
+        </section>
+
+
+
+        <!-- ==========================================================
+             ADDITIONAL POLICY
+             ========================================================== -->
+
+        <section class="extra-policy">
+
+
+            <h2 class="extra-title">
+                Safety & Compliance
+            </h2>
+
+
+            <p>
+
+                This age screen is intended to reduce accidental access
+                by minors. A browser-based confirmation alone should not
+                be treated as a legally sufficient identity or age
+                verification system where stronger age assurance is
+                required.
+
+            </p>
+
+
+            <p>
+
+                Where applicable, the service should use
+                <span class="policy-highlight">
+                    appropriate age-assurance technology,
+                    access controls, moderation, reporting systems and
+                    jurisdiction-based restrictions
+                </span>
+                before allowing access to adult material.
+
+            </p>
+
+
+            <p>
+
+                Any personal information collected by an external
+                age-verification provider should be limited to what is
+                necessary, protected appropriately and retained only
+                as long as required for the verification purpose and
+                applicable law.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- ==========================================================
+             FOOTER
+             ========================================================== -->
+
+        <footer class="footer">
+
+
+            <div>
+
+                © <span id="currentYear"></span>
+                Your Website. Adults Only.
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="privacy-policy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+                <a href="report.html">
+                    Report Content
+                </a>
+
+            </div>
+
+
+        </footer>
+
+
+    </main>
+
+
+
+    <script>
+
+        /*
+        |--------------------------------------------------------------------------
+        | Configuration
+        |--------------------------------------------------------------------------
+        |
+        | HOME_URL:
+        | Successful 18+ verification ke baad user yaha jayega.
+        |
+        | RESTRICTED_URL:
+        | Under 18 / Exit user yaha jayega.
+        |
+        */
+
+        const AGE_GATE_CONFIG = {
+
+            storageKey: 'adult_access_v1',
+
+            minimumAge: 18,
+
+            policyVersion: '1.0',
+
+            acceptedDays: 30,
+
+            homeUrl: 'index.html',
+
+            restrictedUrl: 'restricted.html'
+
+        };
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Elements
+        |--------------------------------------------------------------------------
+        */
+
+        const ageForm =
+            document.getElementById('ageForm');
+
+        const dateOfBirth =
+            document.getElementById('dateOfBirth');
+
+        const adultConsent =
+            document.getElementById('adultConsent');
+
+        const continueButton =
+            document.getElementById('continueButton');
+
+        const exitButton =
+            document.getElementById('exitButton');
+
+        const formMessage =
+            document.getElementById('formMessage');
+
+        const accessStatus =
+            document.getElementById('accessStatus');
+
+        const accessStatusText =
+            document.getElementById('accessStatusText');
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Current Year
+        |--------------------------------------------------------------------------
+        */
+
+        document.getElementById(
+            'currentYear'
+        ).textContent = new Date().getFullYear();
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Maximum DOB
+        |--------------------------------------------------------------------------
+        |
+        | Future date select nahi hogi.
+        |
+        */
+
+        function setMaximumDate() {
+
+            const today = new Date();
+
+            const year =
+                today.getFullYear();
+
+            const month =
+                String(
+                    today.getMonth() + 1
+                ).padStart(2, '0');
+
+            const day =
+                String(
+                    today.getDate()
+                ).padStart(2, '0');
+
+            dateOfBirth.max =
+                year + '-' + month + '-' + day;
+
+        }
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Exact Age Calculation
+        |--------------------------------------------------------------------------
+        */
+
+        function calculateAge(dateString) {
+
+            if (!dateString) {
+                return null;
+            }
+
+            const parts =
+                dateString.split('-');
+
+            if (parts.length !== 3) {
+                return null;
+            }
+
+            const birthYear =
+                Number(parts[0]);
+
+            const birthMonth =
+                Number(parts[1]);
+
+            const birthDay =
+                Number(parts[2]);
+
+
+            if (
+                !birthYear ||
+                !birthMonth ||
+                !birthDay
+            ) {
+                return null;
+            }
+
+
+            const today =
+                new Date();
+
+
+            let age =
+                today.getFullYear() -
+                birthYear;
+
+
+            const currentMonth =
+                today.getMonth() + 1;
+
+            const currentDay =
+                today.getDate();
+
+
+            if (
+                currentMonth < birthMonth ||
+                (
+                    currentMonth === birthMonth &&
+                    currentDay < birthDay
+                )
+            ) {
+
+                age--;
+
+            }
+
+
+            return age;
+
+        }
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Show Message
+        |--------------------------------------------------------------------------
+        */
+
+        function showMessage(
+            message,
+            type
+        ) {
+
+            formMessage.textContent =
+                message;
+
+            formMessage.className =
+                'form-message show ' + type;
+
+        }
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Clear Message
+        |--------------------------------------------------------------------------
+        */
+
+        function clearMessage() {
+
+            formMessage.textContent = '';
+
+            formMessage.className =
+                'form-message';
+
+        }
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Store Decision Safely
+        |--------------------------------------------------------------------------
+        |
+        | DOB save NAHI hoti.
+        |
+        */
+
+        function storeDecision(status) {
+
+            const now =
+                new Date();
+
+
+            const record = {
+
+                status: status,
+
+                confirmedAt:
+                    now.toISOString(),
+
+                policyVersion:
+                    AGE_GATE_CONFIG.policyVersion
+
+            };
+
+
+            /*
+             * Accepted access expiry.
+             */
+            if (status === 'accepted') {
+
+                const expiry =
+                    new Date(
+                        now.getTime() +
+                        (
+                            AGE_GATE_CONFIG.acceptedDays *
+                            24 *
+                            60 *
+                            60 *
+                            1000
+                        )
+                    );
+
+                record.expiresAt =
+                    expiry.toISOString();
+
+            }
+
+
+            try {
+
+                localStorage.setItem(
+                    AGE_GATE_CONFIG.storageKey,
+                    JSON.stringify(record)
+                );
+
+                return true;
+
+            } catch (error) {
+
+                /*
+                 * Browser private mode/storage disabled case.
+                 */
+                console.warn(
+                    'Age preference could not be stored.',
+                    error
+                );
+
+                return false;
+
+            }
+
+        }
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Read Decision
+        |--------------------------------------------------------------------------
+        */
+
+        function getStoredDecision() {
+
+            try {
+
+                const raw =
+                    localStorage.getItem(
+                        AGE_GATE_CONFIG.storageKey
+                    );
+
+
+                if (!raw) {
+                    return null;
+                }
+
+
+                const data =
+                    JSON.parse(raw);
+
+
+                if (
+                    !data ||
+                    !data.status
+                ) {
+                    return null;
+                }
+
+
+                /*
+                 * Accepted state expired.
+                 */
+                if (
+                    data.status === 'accepted' &&
+                    data.expiresAt
+                ) {
+
+                    const expiry =
+                        new Date(
+                            data.expiresAt
+                        ).getTime();
+
+
+                    if (
+                        !Number.isFinite(expiry) ||
+                        Date.now() > expiry
+                    ) {
+
+                        localStorage.removeItem(
+                            AGE_GATE_CONFIG.storageKey
+                        );
+
+                        return null;
+
+                    }
+
+                }
+
+
+                return data;
+
+            } catch (error) {
+
+                /*
+                 * Invalid/corrupt localStorage value remove.
+                 */
+
+                try {
+
+                    localStorage.removeItem(
+                        AGE_GATE_CONFIG.storageKey
+                    );
+
+                } catch (removeError) {
+                    // Ignore.
+                }
+
+
+                return null;
+
+            }
+
+        }
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Update Status UI
+        |--------------------------------------------------------------------------
+        */
+
+        function updateStatus() {
+
+            const decision =
+                getStoredDecision();
+
+
+            accessStatus.classList.remove(
+                'is-approved',
+                'is-blocked'
+            );
+
+
+            if (
+                decision &&
+                decision.status === 'accepted'
+            ) {
+
+                accessStatus.classList.add(
+                    'is-approved'
+                );
+
+                accessStatusText.textContent =
+                    '18+ access confirmed';
+
+                return;
+
+            }
+
+
+            if (
+                decision &&
+                decision.status === 'denied'
+            ) {
+
+                accessStatus.classList.add(
+                    'is-blocked'
+                );
+
+                accessStatusText.textContent =
+                    'Access blocked';
+
+                return;
+
+            }
+
+
+            accessStatusText.textContent =
+                'Age not confirmed';
+
+        }
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Deny Access
+        |--------------------------------------------------------------------------
+        */
+
+        function denyAccess() {
+
+            /*
+             * Denied state save.
+             */
+            storeDecision(
+                'denied'
+            );
+
+
+            /*
+             * History replace use kiya hai so Back button se
+             * accidentally protected page par return na kare.
+             */
+            window.location.replace(
+                AGE_GATE_CONFIG.restrictedUrl
+            );
+
+        }
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Form Submit
+        |--------------------------------------------------------------------------
+        */
+
+        ageForm.addEventListener(
+            'submit',
+            function (event) {
+
+                event.preventDefault();
+
+                clearMessage();
+
+
+                /*
+                 * DOB required.
+                 */
+                if (!dateOfBirth.value) {
+
+                    showMessage(
+                        'Please enter your date of birth.',
+                        'error'
+                    );
+
+                    dateOfBirth.focus();
+
+                    return;
+
+                }
+
+
+                const age =
+                    calculateAge(
+                        dateOfBirth.value
+                    );
+
+
+                /*
+                 * Invalid date.
+                 */
+                if (
+                    age === null ||
+                    age < 0 ||
+                    age > 120
+                ) {
+
+                    showMessage(
+                        'Please enter a valid date of birth.',
+                        'error'
+                    );
+
+                    return;
+
+                }
+
+
+                /*
+                 * Under 18
+                 */
+                if (
+                    age <
+                    AGE_GATE_CONFIG.minimumAge
+                ) {
+
+                    /*
+                     * DOB itself save nahi hogi.
+                     */
+                    denyAccess();
+
+                    return;
+
+                }
+
+
+                /*
+                 * Policy consent required.
+                 */
+                if (!adultConsent.checked) {
+
+                    showMessage(
+                        'Please confirm the adult access policy before continuing.',
+                        'error'
+                    );
+
+                    adultConsent.focus();
+
+                    return;
+
+                }
+
+
+                /*
+                 * Disable button to prevent double submit.
+                 */
+                continueButton.disabled = true;
+
+                continueButton.textContent =
+                    'Access Confirmed';
+
+
+                /*
+                 * Store accepted state.
+                 */
+                storeDecision(
+                    'accepted'
+                );
+
+
+                showMessage(
+                    'Age confirmation successful. Redirecting...',
+                    'success'
+                );
+
+
+                /*
+                 * Redirect.
+                 */
+                window.setTimeout(
+                    function () {
+
+                        window.location.replace(
+                            AGE_GATE_CONFIG.homeUrl
+                        );
+
+                    },
+                    250
+                );
+
+            }
+        );
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Under 18 / Exit Button
+        |--------------------------------------------------------------------------
+        */
+
+        exitButton.addEventListener(
+            'click',
+            function () {
+
+                denyAccess();
+
+            }
+        );
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Input Changes
+        |--------------------------------------------------------------------------
+        */
+
+        dateOfBirth.addEventListener(
+            'change',
+            clearMessage
+        );
+
+        adultConsent.addEventListener(
+            'change',
+            clearMessage
+        );
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Page Init
+        |--------------------------------------------------------------------------
+        */
+
+        setMaximumDate();
+
+        updateStatus();
+
+    </script>
+
+</body>
+
+</html>

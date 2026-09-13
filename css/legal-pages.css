@@ -1,0 +1,574 @@
+/* =========================================================
+   AMAZING VIDEO - LEGAL / POLICY PAGES
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #f6f8fb;
+    color: #25313c;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.av-policy-header {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #e6ebf0;
+}
+
+.av-policy-header-inner {
+    width: 100%;
+    max-width: 1180px;
+    min-height: 72px;
+
+    margin: 0 auto;
+    padding: 12px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.av-policy-logo img {
+    display: block;
+    max-width: 180px;
+    height: auto;
+}
+
+.av-policy-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #66727d;
+    font-size: 13px;
+
+    transition: .2s ease;
+}
+
+.av-policy-back:hover {
+    color: #24a9e8;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.av-policy-hero {
+    padding: 52px 20px 45px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8fbfe 0%,
+            #f7f9ff 100%
+        );
+
+    border-bottom: 1px solid #e7edf2;
+}
+
+.av-policy-hero-inner {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.av-policy-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #edf8fd;
+    color: #24a9e8;
+
+    border-radius: 50%;
+
+    font-size: 26px;
+}
+
+.av-policy-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-bottom: 10px;
+    padding: 6px 11px;
+
+    border: 1px solid #dceef7;
+    border-radius: 50px;
+
+    background: #fff;
+    color: #229fd6;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: .6px;
+}
+
+.av-policy-hero h1 {
+    margin: 0 0 12px;
+
+    color: #182532;
+
+    font-size: 35px;
+    font-weight: 700;
+
+    line-height: 1.25;
+}
+
+.av-policy-hero p {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #6d7882;
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.av-policy-main {
+    padding: 42px 20px 70px;
+}
+
+.av-policy-container {
+    width: 100%;
+    max-width: 920px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   NOTICE
+========================================================= */
+
+.av-notice {
+    margin-bottom: 22px;
+    padding: 18px 20px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+
+    background: #f0f9fd;
+
+    border: 1px solid #dceff8;
+    border-radius: 10px;
+}
+
+.av-notice.warning {
+    background: #fff8f0;
+    border-color: #ffe7c9;
+}
+
+.av-notice.danger {
+    background: #fff6f7;
+    border-color: #ffdce0;
+}
+
+.av-notice-icon {
+    min-width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff;
+    color: #24a9e8;
+
+    font-size: 15px;
+}
+
+.av-notice.warning .av-notice-icon {
+    color: #e69a2c;
+}
+
+.av-notice.danger .av-notice-icon {
+    color: #ef4e5b;
+}
+
+.av-notice h3 {
+    margin: 0 0 4px;
+
+    color: #27333d;
+
+    font-size: 14px;
+}
+
+.av-notice p {
+    margin: 0;
+
+    color: #6e7983;
+
+    font-size: 12.5px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.av-policy-card {
+    margin-bottom: 18px;
+    padding: 24px 25px;
+
+    background: #fff;
+
+    border: 1px solid #e5eaef;
+    border-radius: 11px;
+
+    box-shadow:
+        0 5px 18px
+        rgba(31, 49, 67, .03);
+}
+
+.av-policy-card h2 {
+    margin: 0 0 11px;
+
+    color: #26323c;
+
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.av-policy-card h3 {
+    margin: 18px 0 7px;
+
+    color: #34404a;
+
+    font-size: 14px;
+}
+
+.av-policy-card p {
+    margin: 0 0 11px;
+
+    color: #6d7882;
+
+    font-size: 13px;
+}
+
+.av-policy-card p:last-child {
+    margin-bottom: 0;
+}
+
+.av-policy-list {
+    margin: 12px 0 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.av-policy-list li {
+    position: relative;
+
+    margin-bottom: 9px;
+    padding-left: 23px;
+
+    color: #66727c;
+
+    font-size: 13px;
+}
+
+.av-policy-list li:before {
+    content: "\f00c";
+
+    position: absolute;
+    left: 0;
+    top: 1px;
+
+    color: #24a9e8;
+
+    font-family: FontAwesome;
+    font-size: 11px;
+}
+
+.av-policy-list.red li:before {
+    content: "\f00d";
+    color: #ef4e5b;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.av-form-card {
+    padding: 28px;
+
+    background: #fff;
+
+    border: 1px solid #e4e9ee;
+    border-radius: 12px;
+}
+
+.av-form-group {
+    margin-bottom: 18px;
+}
+
+.av-form-group label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #34404a;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.av-required {
+    color: #ef4e5b;
+}
+
+.av-form-control {
+    width: 100%;
+    min-height: 45px;
+
+    padding: 10px 13px;
+
+    border: 1px solid #dfe5ea;
+    border-radius: 7px;
+
+    background: #fff;
+
+    color: #29343d;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition: .2s ease;
+}
+
+.av-form-control:focus {
+    border-color: #24a9e8;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(36,169,232,.08);
+}
+
+textarea.av-form-control {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.av-form-btn {
+    min-height: 44px;
+
+    padding: 0 20px;
+
+    border: 0;
+    border-radius: 7px;
+
+    background: #24a9e8;
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.av-form-btn:hover {
+    background: #168fc7;
+}
+
+.av-form-message {
+    display: none;
+
+    margin-top: 15px;
+    padding: 12px 14px;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+}
+
+.av-form-message.success {
+    display: block;
+
+    background: #f0faf4;
+    color: #33855a;
+
+    border: 1px solid #d5efdf;
+}
+
+.av-form-message.error {
+    display: block;
+
+    background: #fff4f5;
+    color: #c94b57;
+
+    border: 1px solid #ffdce0;
+}
+
+
+/* =========================================================
+   CONTACT BOX
+========================================================= */
+
+.av-contact-box {
+    margin-top: 22px;
+    padding: 22px;
+
+    background: #1e2934;
+
+    border-radius: 11px;
+}
+
+.av-contact-box h3 {
+    margin: 0 0 7px;
+
+    color: #fff;
+
+    font-size: 16px;
+}
+
+.av-contact-box p {
+    margin: 0 0 5px;
+
+    color: #c2cad1;
+
+    font-size: 12px;
+}
+
+.av-contact-box a {
+    color: #51c4f3;
+}
+
+
+/* =========================================================
+   LAST UPDATED
+========================================================= */
+
+.av-updated {
+    margin-top: 25px;
+
+    color: #9aa3ab;
+
+    font-size: 11px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.av-policy-footer {
+    padding: 20px;
+
+    background: #fff;
+
+    border-top: 1px solid #e5eaef;
+
+    text-align: center;
+}
+
+.av-policy-footer p {
+    margin: 0;
+
+    color: #8e979f;
+
+    font-size: 11px;
+}
+
+.av-policy-footer a {
+    color: #24a9e8;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .av-policy-header-inner {
+        min-height: 64px;
+        padding: 11px 15px;
+    }
+
+    .av-policy-logo img {
+        max-width: 150px;
+    }
+
+    .av-policy-back span {
+        display: none;
+    }
+
+    .av-policy-hero {
+        padding: 36px 15px;
+    }
+
+    .av-policy-icon {
+        width: 60px;
+        height: 60px;
+
+        font-size: 22px;
+    }
+
+    .av-policy-hero h1 {
+        font-size: 27px;
+    }
+
+    .av-policy-main {
+        padding:
+            28px 15px 50px;
+    }
+
+    .av-policy-card,
+    .av-form-card {
+        padding: 18px;
+    }
+
+    .av-notice {
+        padding: 14px;
+    }
+
+}

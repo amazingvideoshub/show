@@ -1,0 +1,638 @@
+<!DOCTYPE html><html><head>
+<meta charset="utf-8">
+<title>Amazing Videos</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/revolution-slider.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link href="css/bootstrap-margin-padding.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="page-wrapper">
+
+
+    <!-- =====================================================
+     AMAZING VIDEO - AGE VERIFICATION
+====================================================== -->
+
+<div id="avAgeOverlay" class="av-age-overlay">
+
+    <div class="av-age-card">
+
+        <!-- Logo -->
+        <div class="av-age-logo">
+            <img src="amazinglogo.png" alt="Amazing Video">
+        </div>
+
+
+        <!-- Age Badge -->
+        <div class="av-18-circle">
+            18+
+        </div>
+
+
+        <h2 class="av-age-title">
+            Age Verification Required
+        </h2>
+
+        <p class="av-age-description">
+            Amazing Video contains age-restricted content intended
+            exclusively for adults. You must be at least 18 years old
+            to access this website.
+        </p>
+
+
+        <!-- Information -->
+        <div class="av-age-info">
+
+            <i class="fa fa-shield"></i>
+
+            <p>
+                By entering this website, you confirm that you are
+                18 years of age or older and that accessing
+                age-restricted content is permitted in your location.
+            </p>
+
+        </div>
+
+
+        <p class="av-age-question">
+            Are you 18 years of age or older?
+        </p>
+
+
+        <!-- Buttons -->
+        <div class="av-age-actions">
+
+            <button
+                type="button"
+                id="avAgeYes"
+                class="av-age-btn av-age-btn-yes"
+            >
+                <i class="fa fa-check-circle"></i>
+
+                Yes, I am 18+
+            </button>
+
+
+            <button
+                type="button"
+                id="avAgeNo"
+                class="av-age-btn av-age-btn-no"
+            >
+                <i class="fa fa-times-circle"></i>
+
+                No, Exit
+            </button>
+
+        </div>
+
+
+        <p class="av-age-terms">
+
+            By clicking “Yes, I am 18+”, you agree to our
+
+            <a href="terms.html">Terms</a>
+
+            and
+
+            <a href="privacy.html">Privacy Policy</a>.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     RESTRICTED ACCESS SCREEN
+====================================================== -->
+
+<div id="avRestrictedPage" class="av-restricted-page">
+
+    <div class="av-restricted-card">
+
+        <div class="av-restricted-icon">
+            <i class="fa fa-lock"></i>
+        </div>
+
+
+        <h1>
+            Access Restricted
+        </h1>
+
+
+        <p class="restricted-subtitle">
+            You cannot access Amazing Video because this website
+            is intended only for users who are 18 years of age or older.
+        </p>
+
+
+        <div class="av-restricted-info">
+
+            <strong>Age Restricted Content</strong>
+
+            <br>
+
+            This website contains material intended exclusively
+            for adults. Access is not permitted if you are
+            under 18 years of age.
+
+        </div>
+
+
+        <button
+            type="button"
+            class="av-exit-btn"
+            onclick="window.location.href='https://www.google.com';"
+        >
+            <i class="fa fa-sign-out"></i>
+            Leave Website
+        </button>
+
+
+        <div class="av-restricted-brand">
+
+            <img
+                src="amazinglogo.png"
+                alt="Amazing Video"
+            >
+
+            Adults Only • 18+
+
+        </div>
+
+    </div>
+
+</div>
+
+    
+    <!-- Preloader -->
+    <div class="preloader"></div>
+    
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-top">
+        
+            <div class="container">
+                <div class="row clearfix">
+                    <!--Logo-->
+                    <div class="col-md-4 col-sm-4 col-xs-12 logo"><a href="index.html">
+                        <img src="amazinglogo.png" alt="VideoForest" title="VideoForest"></a></div>
+                    
+                  <div class="col-lg-5 col-md-6 col-sm-8 col-xs-12 header-search-wrap pull-right">
+<form class="amazing-search-form"
+      id="amazingSearchForm">
+
+    <div class="amazing-search-box">
+
+        <span class="amazing-search-icon">
+            <i class="fa fa-search"></i>
+        </span>
+
+
+        <input
+            type="search"
+            id="amazingSearchInput"
+            class="amazing-search-input"
+            placeholder="Search videos..."
+            autocomplete="off"
+            aria-label="Search videos"
+        >
+
+
+        <select
+            id="amazingSearchType"
+            class="amazing-search-type"
+            aria-label="Search type"
+        >
+
+            <option value="all">
+                All
+            </option>
+
+            <option value="video">
+                Videos
+            </option>
+
+        </select>
+
+
+        <button
+            type="submit"
+            class="amazing-search-btn"
+            aria-label="Search"
+        >
+            Search
+        </button>
+
+    </div>
+
+
+    <div
+        id="amazingSearchStatus"
+        class="amazing-search-status">
+    </div>
+
+</form>
+
+</div>
+                    
+                </div>
+            </div>
+            
+        </div>
+      
+    </header>
+    <!--End Main Header -->
+    
+
+<!--Gallery Section-->
+<!-- ==========================================
+     LATEST VIDEOS
+=========================================== -->
+<section class="gallery-section full-width pt-0 pb-70">
+
+    <div class="container">
+
+        <!-- Heading -->
+        <div class="row">
+            <div class="col-md-12 section-title">
+
+                <h3 class="title pull-left xs-pull-left mt-10 mt-sm-0 mb-xs-10">
+                    <span class="color-theme">Latest</span> Added
+                </h3>
+
+                <div class="title-border mb-25"></div>
+
+            </div>
+        </div>
+
+
+        <!-- Result Information -->
+        <div class="row">
+            <div class="col-md-12">
+
+                <div
+                    id="videoResultInfo"
+                    class="av-result-info"
+                    style="display:none;">
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Loading -->
+        <div
+            id="videoLoading"
+            class="av-video-state">
+
+            <div class="av-loader"></div>
+
+            <h4>Loading videos...</h4>
+
+        </div>
+
+
+        <!-- Error -->
+        <div
+            id="videoError"
+            class="av-video-state"
+            style="display:none;">
+
+            <div class="av-state-icon av-state-error">
+                <i class="fa fa-exclamation-triangle"></i>
+            </div>
+
+            <h4>Unable to load videos</h4>
+
+            <p>Please try again.</p>
+
+            <button
+                type="button"
+                id="videoRetryBtn"
+                class="btn btn-thm">
+
+                <i class="fa fa-refresh"></i>
+                Retry
+
+            </button>
+
+        </div>
+
+
+        <!-- No Results -->
+        <div
+            id="videoEmpty"
+            class="av-video-state"
+            style="display:none;">
+
+            <div class="av-state-icon">
+                <i class="fa fa-search"></i>
+            </div>
+
+            <h4>No videos found</h4>
+
+            <p>Try another search.</p>
+
+        </div>
+
+
+        <!--
+            IMPORTANT:
+            Purana filter-list / mix classes nahi hain.
+        -->
+        <div
+            id="videoGrid"
+            class="row av-video-grid">
+        </div>
+
+
+        <!-- Load More -->
+        <div
+            id="videoLoadMoreWrap"
+            class="row"
+            style="display:none;">
+
+            <div class="col-md-12 text-center">
+
+                <button
+                    type="button"
+                    id="videoLoadMoreBtn"
+                    class="btn btn-thm av-load-more">
+
+                    <i class="pe-7s-refresh text-white"></i>
+
+                    Load More
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+ 
+   <!-- 18+ Age Warning Section -->
+<section class="age-warning-section pt-50 pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 text-center">
+
+                <div class="age-warning-box">
+                    <div class="age-icon">18+</div>
+
+                    <h2 class="age-title">
+                        Adults Only – 18+ Content
+                    </h2>
+
+                    <p class="age-text">
+                        This website is intended strictly for adults aged 18 years or older.
+                        By continuing to use this website, you confirm that you are at least
+                        18 years of age and that viewing age-restricted content is permitted
+                        in your location.
+                    </p>
+
+                    <p class="age-subtext">
+                        All users are responsible for complying with the laws and regulations
+                        applicable in their country or region.
+                    </p>
+
+                    <div class="age-badges">
+                        <span>
+                            <i class="fa fa-check-circle"></i>
+                            18+ Users Only
+                        </span>
+
+                        <span>
+                            <i class="fa fa-shield"></i>
+                            Privacy Focused
+                        </span>
+
+                        <span>
+                            <i class="fa fa-lock"></i>
+                            Age Restricted
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Main Footer -->
+<footer class="main-footer">
+
+    <div class="footer-upper">
+        <div class="container">
+            <div class="row clearfix">
+
+                <!-- Logo & About -->
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <div class="footer-widget about-widget">
+
+                        <a href="index.html" class="footer-logo " style="    margin-bottom: 17px ! IMPORTANT;
+    display: block;">
+                            <img src="amazinglogo.png" width="150" alt="Amazing Video">
+                        </a>
+
+                        <p class="footer-desc">
+                            Amazing Video is an age-restricted video platform intended
+                            exclusively for adults aged 18 years or older.
+                        </p>
+
+                        <div class="footer-age-notice">
+                            <span class="footer-18">18+</span>
+                            <span>Adults Only</span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Quick Links -->
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <div class="footer-widget links-widget">
+
+                        <div class="widget-title">
+                            <h3>Quick Links</h3>
+                        </div>
+
+                        <ul>
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+
+                            <li>
+                                <a href="#videos">Videos</a>
+                            </li>
+
+                            <li>
+                                <a href="privacy.html">Privacy Policy</a>
+                            </li>
+
+                            <li>
+                                <a href="terms.html">Terms & Conditions</a>
+                            </li>
+
+                          
+                        </ul>
+
+                    </div>
+                </div>
+
+
+                <!-- Important Information -->
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div class="footer-widget links-widget">
+
+                        <div class="widget-title">
+                            <h3>Important Information</h3>
+                        </div>
+
+                        <ul>
+                            <li>
+                                <a href="age-policy.html">
+                                    18+ Age Policy
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="community-guidelines.html">
+                                    Community Guidelines
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="content-policy.html">
+                                    Content Policy
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="report.html">
+                                    Report Content
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="dmca.html">
+                                    Copyright / DMCA
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-8 col-xs-12 xs-text-center">
+
+                    <p class="fs-13 mb-0">
+                        © 2026
+                        <a class="color-theme" href="index.html">
+                            Amazing Video
+                        </a>
+                        — All rights reserved.
+                        <span class="footer-small-warning">
+                            Adults 18+ only.
+                        </span>
+                    </p>
+
+                </div>
+
+
+                <div class="col-sm-4 col-xs-12 xs-text-center">
+
+                    <div class="footer-widget text-right xs-text-center mb-0">
+
+                        <ul class="social-links icon-bg-theme list-inline">
+
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-youtube-play"></i>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</footer>
+    
+</div>
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top"><span class="fa fa-arrow-up"></span></div>
+<script src="js/check18plus.js"></script>
+<script src="js/apicall.js"></script>
+
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/revolution.min.js"></script>
+<!-- Bx slider -->
+<script src="js/jquery.bxslider.min.js"></script>
+<!-- MixIt UP JS -->
+<script src="js/jquery.mixitup.min.js"></script> 
+
+<!-- FancyBox -->
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.plugin.min.js"></script>
+<script src="js/jquery.datepick.min.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/script.js"></script>
+
+
+</body></html>
