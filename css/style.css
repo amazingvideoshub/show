@@ -6703,7 +6703,7 @@ body.av-age-locked {
 
 
 .av-video-title {
-    margin: 0 0 8px;
+    margin: 0 0 0px;
 
     line-height: 1.45;
 }
@@ -8695,7 +8695,7 @@ body.av-age-locked {
 }
 
 .av-video-title {
-    margin: 0 0 18px;
+    margin: 0 0 1px;
     font-size: 34px;
     line-height: 1.25;
     color: #1d2d4d;
@@ -8704,10 +8704,10 @@ body.av-age-locked {
 }
 
 .av-video-meta {
-    display: grid;
-    grid-template-columns: 1fr;
+       display: flex;
     gap: 14px;
-    margin-bottom: 24px;
+    margin-bottom: 0px;
+    align-items: center;
 }
 
 .av-meta-item {
