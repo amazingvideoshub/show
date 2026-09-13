@@ -263,7 +263,9 @@
 <!-- =========================================================
      AMAZING VIDEO - PREMIUM WATCH PLAYER
 ========================================================= -->
-<section class="av-premium-watch">
+
+
+<section class="av-preview-watch">
 
     <div class="container">
 
@@ -276,25 +278,19 @@
         </div>
 
 
-        <!-- =========================
-             INITIAL API LOADING
-        ========================== -->
+        <!-- Loading -->
         <div id="avPageLoading" class="av-page-state">
 
             <div class="av-page-loader"></div>
 
             <h3>Loading Video</h3>
 
-            <p>
-                Preparing your video experience...
-            </p>
+            <p>Preparing your preview...</p>
 
         </div>
 
 
-        <!-- =========================
-             ERROR
-        ========================== -->
+        <!-- Error -->
         <div id="avPageError"
              class="av-page-error"
              style="display:none;">
@@ -309,7 +305,7 @@
                 This video could not be loaded.
             </p>
 
-            <a href="index.html" class="av-page-error-btn">
+            <a href="index.html" class="av-page-btn">
                 <i class="fa fa-angle-left"></i>
                 Browse Videos
             </a>
@@ -317,336 +313,123 @@
         </div>
 
 
-        <!-- =========================
-             PLAYER CONTENT
-        ========================== -->
+        <!-- Content -->
         <div id="avWatchContent"
              class="av-watch-content"
              style="display:none;">
 
+            <div class="av-preview-grid">
 
-            <!-- =====================================
-                 CUSTOM VIDEO PLAYER
-            ====================================== -->
-            <div id="avPlayer"
-                 class="av-player"
-                 tabindex="0">
+                <!-- Left: Preview -->
+                <div class="av-preview-card">
 
-                <video
-                    id="avVideo"
-                    class="av-video"
-                    preload="metadata"
-                    playsinline
-                    webkit-playsinline>
-                </video>
-
-
-                <!-- Poster / Dark Overlay -->
-                <div id="avPlayerShade"
-                     class="av-player-shade">
-                </div>
-
-
-                <!-- =============================
-                     BUFFER LOADING
-                ============================== -->
-                <div id="avBufferLoader"
-                     class="av-buffer-loader">
-
-                    <div class="av-buffer-spinner"></div>
-
-                    <span>Loading video...</span>
-
-                </div>
-
-
-                <!-- =============================
-                     DOUBLE TAP FEEDBACK
-                ============================== -->
-
-                <div id="avSeekFeedbackLeft"
-                     class="av-seek-feedback av-seek-feedback-left">
-
-                    <i class="fa fa-backward"></i>
-
-                    <strong>10</strong>
-
-                    <span>seconds</span>
-
-                </div>
-
-
-                <div id="avSeekFeedbackRight"
-                     class="av-seek-feedback av-seek-feedback-right">
-
-                    <i class="fa fa-forward"></i>
-
-                    <strong>10</strong>
-
-                    <span>seconds</span>
-
-                </div>
-
-
-                <!-- =============================
-                     DOUBLE TAP ZONES
-                ============================== -->
-
-                <button type="button"
-                        id="avTapLeft"
-                        class="av-tap-zone av-tap-left"
-                        aria-label="Seek backward 10 seconds">
-                </button>
-
-
-                <button type="button"
-                        id="avTapRight"
-                        class="av-tap-zone av-tap-right"
-                        aria-label="Seek forward 10 seconds">
-                </button>
-
-
-                <!-- =============================
-                     CENTER CONTROLS
-                ============================== -->
-                <div id="avCenterControls"
-                     class="av-center-controls">
-
-                    <!-- Rewind -->
                     <button
                         type="button"
-                        id="avCenterBack"
-                        class="av-center-skip"
-                        aria-label="Back 10 seconds">
+                        id="avVideoPreview"
+                        class="av-video-preview"
+                        aria-label="Open video in new tab">
 
-                        <i class="fa fa-undo"></i>
+                        <img
+                            id="avPreviewImage"
+                            class="av-preview-image"
+                            src=""
+                            alt="Video Thumbnail"
+                        >
 
-                        <span>10</span>
+                        <div class="av-preview-overlay"></div>
 
-                    </button>
-
-
-                    <!-- Play / Pause -->
-                    <button
-                        type="button"
-                        id="avCenterPlay"
-                        class="av-center-play"
-                        aria-label="Play video">
-
-                        <i class="fa fa-play"></i>
-
-                    </button>
-
-
-                    <!-- Forward -->
-                    <button
-                        type="button"
-                        id="avCenterForward"
-                        class="av-center-skip"
-                        aria-label="Forward 10 seconds">
-
-                        <i class="fa fa-repeat"></i>
-
-                        <span>10</span>
-
-                    </button>
-
-                </div>
-
-
-                <!-- =============================
-                     BOTTOM CONTROLS
-                ============================== -->
-                <div id="avControls"
-                     class="av-controls">
-
-                    <!-- Progress -->
-                    <div class="av-progress-wrap"
-                         id="avProgressWrap">
-
-                        <div class="av-progress-buffer"
-                             id="avBufferedBar">
+                        <div class="av-preview-badge">
+                            <i class="fa fa-play-circle"></i>
+                            Video Preview
                         </div>
 
-                        <div class="av-progress-played"
-                             id="avPlayedBar">
-                        </div>
+                        <div class="av-preview-center">
 
-                        <div class="av-progress-handle"
-                             id="avProgressHandle">
-                        </div>
+                            <div class="av-play-ripple av-ripple-one"></div>
+                            <div class="av-play-ripple av-ripple-two"></div>
 
-                        <input
-                            id="avProgress"
-                            class="av-progress-input"
-                            type="range"
-                            min="0"
-                            max="100"
-                            value="0"
-                            step="0.01"
-                            aria-label="Video progress">
-
-                    </div>
-
-
-                    <div class="av-controls-row">
-
-                        <!-- Left -->
-                        <div class="av-controls-left">
-
-                            <button type="button"
-                                    id="avBottomPlay"
-                                    class="av-control-btn"
-                                    aria-label="Play">
-
+                            <div class="av-play-button">
                                 <i class="fa fa-play"></i>
-
-                            </button>
-
-
-                            <button type="button"
-                                    id="avMute"
-                                    class="av-control-btn"
-                                    aria-label="Mute">
-
-                                <i class="fa fa-volume-up"></i>
-
-                            </button>
-
-
-                            <div class="av-volume-box">
-
-                                <input
-                                    type="range"
-                                    id="avVolume"
-                                    class="av-volume"
-                                    min="0"
-                                    max="1"
-                                    step="0.05"
-                                    value="1">
-
-                            </div>
-
-
-                            <div class="av-time">
-                                <span id="avCurrentTime">00:00</span>
-
-                                <span class="av-time-divider">/</span>
-
-                                <span id="avDuration">00:00</span>
                             </div>
 
                         </div>
 
+                        <div class="av-preview-bottom">
 
-                        <!-- Right -->
-                        <div class="av-controls-right">
-
-                            <!-- Speed -->
-                            <div class="av-speed-wrap">
-
-                                <button
-                                    type="button"
-                                    id="avSpeedBtn"
-                                    class="av-control-text-btn">
-
-                                    1x
-
-                                </button>
-
-
-                                <div id="avSpeedMenu"
-                                     class="av-speed-menu">
-
-                                    <button data-speed="0.5">
-                                        0.5x
-                                    </button>
-
-                                    <button data-speed="0.75">
-                                        0.75x
-                                    </button>
-
-                                    <button data-speed="1"
-                                            class="active">
-                                        Normal
-                                    </button>
-
-                                    <button data-speed="1.25">
-                                        1.25x
-                                    </button>
-
-                                    <button data-speed="1.5">
-                                        1.5x
-                                    </button>
-
-                                    <button data-speed="2">
-                                        2x
-                                    </button>
-
-                                </div>
-
+                            <div class="av-preview-open-text">
+                                <i class="fa fa-external-link"></i>
+                                Click & Play Video
                             </div>
-
-
-                            <!-- PIP -->
-                            <button type="button"
-                                    id="avPip"
-                                    class="av-control-btn"
-                                    aria-label="Picture in Picture">
-
-                                <i class="fa fa-clone"></i>
-
-                            </button>
-
-
-                            <!-- Fullscreen -->
-                            <button type="button"
-                                    id="avFullscreen"
-                                    class="av-control-btn"
-                                    aria-label="Fullscreen">
-
-                                <i class="fa fa-expand"></i>
-
-                            </button>
-
                         </div>
 
-                    </div>
+                    </button>
 
                 </div>
 
-            </div>
 
+                <!-- Right: Info -->
+                <div class="av-video-info-card">
 
-            <!-- =====================================
-                 VIDEO INFORMATION
-            ====================================== -->
-            <div class="av-video-information">
+                    <div class="av-video-chip">
+                        <i class="fa fa-film"></i>
+                        Amazing Video
+                    </div>
 
-                <div class="av-video-heading">
-
-                    <span class="av-now-watching">
-                        <i class="fa fa-play-circle"></i>
-                        Now Playing
-                    </span>
-
-                    <h1 id="avVideoTitle">
+                    <h1 id="avVideoTitle" class="av-video-title">
                         Loading...
                     </h1>
 
-                    <div class="av-video-small-meta">
+                    <div class="av-video-meta">
 
-                        <span>
-                            <i class="fa fa-video-camera"></i>
-                            Amazing Video
-                        </span>
+                        <div class="av-meta-item">
+                            <span class="av-meta-label">Video ID</span>
+                            <strong id="avVideoId">--</strong>
+                        </div>
 
-                        <span id="avVideoIdWrap">
-                            <i class="fa fa-hashtag"></i>
-                            <span id="avVideoId"></span>
-                        </span>
+                        <div class="av-meta-item">
+                            <span class="av-meta-label">Slug</span>
+                            <strong id="avVideoSlug">--</strong>
+                        </div>
+
+                        <div class="av-meta-item">
+                            <span class="av-meta-label">Status</span>
+                            <strong id="avVideoStatus">Active</strong>
+                        </div>
 
                     </div>
+
+                    <div class="av-info-box">
+                        <div class="av-info-icon">
+                            <i class="fa fa-info-circle"></i>
+                        </div>
+                        <div>
+                            <h4>How this works</h4>
+                            <p>
+                                For better compatibility, this page shows a video preview image only.
+                                When you click the preview or button below, the original video link opens in a new tab.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="av-open-actions">
+                        <a href="#"
+                           id="avOpenVideoBtn"
+                           class="av-page-btn av-primary-btn"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <i class="fa fa-play"></i>
+                            Open Video
+                        </a>
+
+                        <button type="button"
+                                id="avCopyVideoLink"
+                                class="av-page-btn av-secondary-btn">
+                            <i class="fa fa-link"></i>
+                            Copy Video Link
+                        </button>
+                    </div>
+
+                    <div id="avCopyMessage" class="av-copy-message"></div>
 
                 </div>
 
@@ -657,6 +440,7 @@
     </div>
 
 </section>
+
 
 
 <section class="gallery-section full-width pt-0 pb-70">
